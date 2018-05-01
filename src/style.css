@@ -1,0 +1,64 @@
+
+
+html {
+	height  : 100%;
+	width   : 100%;
+}
+
+body {
+	margin  : 0;
+	padding : 0;
+	height  : 140%;
+	width   : 100%;
+}
+
+
+a           { color:#000000; }
+a:link      { color:#000000; }
+a:visited   { color:#000000; }
+a:hover     { color:#000000; }
+a:active    { color:#000000; }
+
+td.WHITE_CELL {	background-color : #f0f0ea;}
+td.COLOR01_CELL { background-color : #f0f0ea;}
+td.COLOR02_CELL { background-color : #ffffff;}
+td.COLOR03_CELL { background-color : #888888;}
+
+td.GRAY_CELL {
+	background-color : #dddddd;
+}
+
+td.PINK_CELL {
+	background-color : #FF9999;
+}
+
+#AREA_MAP {
+	margin  : 0;
+	padding : 0;
+	height  : 100%;
+	width   : 100%;
+}
+
+#AREA_INFO {
+	height   : 100%;
+	width    : 100%;
+}
+ 
+#AREA_GRAY {
+	background : #000000;
+	opacity    : 0.5;
+	width      : 100%;
+	height     : 100%;
+	position   : fixed;
+	top        : 0;
+	left       : 0;
+	display    : none;
+	z-index    : 50;
+}
+
+#AREA_DETAIL {
+	overflow   : auto; 
+	background : #fff3e8;
+	height     : 85%;
+}
+
