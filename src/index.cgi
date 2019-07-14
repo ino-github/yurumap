@@ -14,7 +14,7 @@ obj_area1 = DataArea1.new()
 obj_area2 = DataArea2.new()
 
 obj_log   = AccessLog.new
-obj_log.writeLog(ENV)
+obj_log.writeLogAccess(ENV)
 
 obj_counter  = AccessCounter.new()
 count_str    = obj_counter.getCount()
