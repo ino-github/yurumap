@@ -64,6 +64,24 @@ EOS
 
 	#####################
 	#####################
+	def getInfoYuruForLog(code_spot)
+
+		obj_yuru        = DataYuru.new()
+		code_yuru       = ""
+		name_yuru       = ""
+
+		@list_prop.each { |prop_row|
+			if ( code_spot == prop_row[@@IDX_CODE].to_s ) then
+				code_yuru = prop_row[@@IDX_CODE_YURU].to_s
+				name_yuru = obj_yuru.getName(code_yuru)
+				break
+			end
+		}
+		return code_yuru + "\t" + name_yuru
+	end
+
+	#####################
+	#####################
 	def getNewUpdate(p_str_date_reg, p_str_date_upd)
 		date_regist  = Date.strptime('2000.1.1','%Y.%m.%d')
 		date_update  = Date.strptime('2000.1.1','%Y.%m.%d')

@@ -6,6 +6,7 @@ require "./Common"
 require "./DataSpot"
 require "./DataArea2"
 require "./DataHistory"
+require "./AccessLog"
 
 REQ_TITLE        = "REQ_TITLE"
 REQ_LIST_SPOT    = "REQ_LIST_SPOT"
@@ -67,7 +68,12 @@ when REQ_LIST_SPOT then
 when REQ_SPOT_DETAIL then
 	code_spot = cgi["SELECT_SPOT"]
 
+	obj_log   = AccessLog.new()
 	obj_spot  = DataSpot.new()
+
+	code_yuru = obj_spot.getInfoYuruForLog(code_spot)
+	obj_log.writeLogYuru(code_yuru)
+
 	spot_info = obj_spot.getSpotInfo(code_spot)
 	print spot_info
 

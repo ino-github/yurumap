@@ -1,7 +1,7 @@
 
 class Common
 
-	VERSION = "1.02_20180428"
+	VERSION = "1.03_20180701"
 
 	FILE_PATH_AREA1   = "./data_area1.csv"
 	FILE_PATH_AREA2   = "./data_area2.csv"
