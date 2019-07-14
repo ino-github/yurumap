@@ -47,4 +47,36 @@ class DataArea2 < DataManager
 
 		return str_select
 	end	
+
+	#####################
+	#####################
+	def getName(p_code_area1, p_code_area2)
+		return getPropArea2(p_code_area1, p_code_area2, @@IDX_NAME)
+	end
+	#####################
+	#####################
+	def getPropArea2(p_code_area1, p_code_area2, p_idx)
+
+		ret_val     = ""
+		code_area1  = ""
+		code_area2  = ""
+		enable      = ""
+		name        = ""
+		@list_prop.each { |prop_row|
+			code_area1    = prop_row[@@IDX_CODE_AREA1].to_s
+			code_area2    = prop_row[@@IDX_CODE_AREA2].to_s
+			enable        = prop_row[@@IDX_ENABLE].to_s
+			name          = prop_row[@@IDX_NAME].to_s
+			next if ( enable     != @@VAL_ENABLE && @@IS_ADMIN == false )
+			next if ( code_area1 != p_code_area1 )
+			next if ( code_area2 != p_code_area2 )
+			break
+		}
+
+		case p_idx
+		when @@IDX_NAME then
+			ret_val = name
+		end
+		return ret_val
+	end
 end

@@ -61,18 +61,22 @@ TITLE_EOS
 when REQ_LIST_SPOT then
 	code_area1 = cgi["SELECT_AREA1"]
 	code_area2 = cgi["SELECT_AREA2"]
-	obj_spot       = DataSpot.new()
+	obj_log    = AccessLog.new()
+	obj_spot   = DataSpot.new()
+
+	info_area = obj_spot.getInfoAreaForLog(code_area1, code_area2)
+	obj_log.writeLogYuru(info_area)
+
 	str_spot_liset = obj_spot.getListSpot(code_area1, code_area2)
 	print str_spot_liset
 
 when REQ_SPOT_DETAIL then
 	code_spot = cgi["SELECT_SPOT"]
-
 	obj_log   = AccessLog.new()
 	obj_spot  = DataSpot.new()
 
-	code_yuru = obj_spot.getInfoYuruForLog(code_spot)
-	obj_log.writeLogYuru(code_yuru)
+	info_yuru = obj_spot.getInfoYuruForLog(code_spot)
+	obj_log.writeLogYuru(info_yuru)
 
 	spot_info = obj_spot.getSpotInfo(code_spot)
 	print spot_info
