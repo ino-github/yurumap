@@ -2,6 +2,8 @@ require "date"
 require "./Common"
 require "./DataManager"
 require "./DataYuru"
+require "./DataArea1"
+require "./DataArea2"
 
 class DataSpot < DataManager
 	@@DATA_FILE_PATH   = Common::FILE_PATH_SPOT
@@ -78,6 +80,18 @@ EOS
 			end
 		}
 		return code_yuru + "\t" + name_yuru
+	end
+
+	#####################
+	#####################
+	def getInfoAreaForLog(code_area1, code_area2)
+
+		obj_area1     = DataArea1.new()
+		obj_area2     = DataArea2.new()
+		name_area1    = obj_area1.getName(code_area1);
+		name_area2    = obj_area2.getName(code_area1, code_area2);
+
+		return code_area1 + code_area2 + "\t" + name_area1 + name_area2
 	end
 
 	#####################

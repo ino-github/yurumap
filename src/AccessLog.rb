@@ -30,7 +30,7 @@ class AccessLog
 
 	end
 
-	def writeLogYuru(p_code)
+	def writeLogYuru(p_log)
 		date_now  = Time.now
 		str_now   = date_now.strftime("%Y/%m/%d %H:%M:%S")
 		file_path = "./log/" + date_now.strftime("%Y%m") + "_yuru.log"
@@ -39,7 +39,7 @@ class AccessLog
 			File.open(file_path, "w").close()
 		end
 
-		str_log = str_now + "\t" + p_code + "\n"
+		str_log = str_now + "\t" + p_log + "\n"
 		log_file = open(file_path, "a+")
 		log_file.flock(File::LOCK_EX)
 
